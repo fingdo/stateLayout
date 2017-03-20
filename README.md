@@ -5,7 +5,7 @@
 ![演示图](http://upload-images.jianshu.io/upload_images/1967808-08bf36a152a8ded2.gif)
 
 
-##依赖
+## 依赖
 第一步，在项目根目录的build.gradle加入，如果没有，请加入
 
 ```
