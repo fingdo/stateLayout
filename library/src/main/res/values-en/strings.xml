@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="time_out_tip">time out</string>
+    <string name="btn_login">sign in</string>
+    <string name="empty_tip">no data</string>
+    <string name="error_tip">load failed</string>
+    <string name="loading_tip">loading</string>
+    <string name="no_login_tip">you are not logged in</string>
+    <string name="no_network_tip">not network</string>
+    <string name="retry_tip">touch screen retry</string>
+</resources>

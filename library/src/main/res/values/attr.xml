@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StateLayout">
+        <!-- 错误提示图标 -->
+        <attr name="errorImg" format="reference" />
+        <!-- 错误提示文字 -->
+        <attr name="errorText" format="string" />
+        <!-- 空数据提示图标 -->
+        <attr name="emptyImg" format="reference" />
+        <!-- 空数据提示文字 -->
+        <attr name="emptyText" format="string" />
+        <!-- 没有网络提示图标 -->
+        <attr name="noNetworkImg" format="reference" />
+        <!-- 没有网络提示文字 -->
+        <attr name="noNetworkText" format="string" />
+        <!-- 超时提示图标 -->
+        <attr name="timeOutImg" format="reference" />
+        <!-- 超时提示文字 -->
+        <attr name="timeOutText" format="string" />
+        <!-- 登录提示图标 -->
+        <attr name="loginImg" format="reference" />
+        <!-- 登录提示文字 -->
+        <attr name="loginText" format="string" />
+        <!-- 加载提示文字 -->
+        <attr name="loadingText" format="string" />
+    </declare-styleable>
+
+
+</resources>

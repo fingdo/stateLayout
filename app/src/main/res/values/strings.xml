@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">statelayoutdemo</string>
+
+    <string name="content_tip">我是内容</string>
+
+    <string name="toast_refresh">刷新</string>
+    <string name="toast_sign_in">登录</string>
+</resources>

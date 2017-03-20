@@ -1,0 +1,13 @@
+<resources>
+
+
+    <string name="empty_tip">暂无数据</string>
+    <string name="no_network_tip">没有网络</string>
+    <string name="error_tip">加载失败</string>
+    <string name="time_out_tip">加载超时</string>
+    <string name="no_login_tip">你还没有登录</string>
+    <string name="btn_login">登录</string>
+    <string name="loading_tip">加载中...</string>
+    <string name="retry_tip">轻触屏幕重试</string>
+
+</resources>

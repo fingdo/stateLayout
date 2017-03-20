@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">statelayoutdemo</string>
+
+
+    <string name="content_tip">I am content</string>
+    <string name="toast_refresh">refresh</string>
+    <string name="toast_sign_in">sign in</string>
+</resources>
