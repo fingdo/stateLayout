@@ -5,6 +5,24 @@
 ![演示图](http://upload-images.jianshu.io/upload_images/1967808-08bf36a152a8ded2.gif)
 
 
+##依赖
+第一步，在项目根目录的build.gradle加入，如果没有，请加入
+
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+第二步，依赖此库
+
+```
+compile 'com.github.fingdo:stateLayout:1.0.0'
+```
+
+
 ## 使用方法
 ### 引入布局
 
@@ -188,4 +206,4 @@ void loginClick();
 ```
 
 
-感谢[lufficc](https://github.com/lufficc/StateLayout)提供的思路
+感谢[lufficc](https://github.com/lufficc/StateLayout)公开的源码提供了的动画思路
