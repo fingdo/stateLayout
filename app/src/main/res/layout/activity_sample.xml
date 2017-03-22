@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,6 +12,7 @@
 
     <LinearLayout
         android:id="@+id/ll_button"
+        android:layout_below="@+id/btn_content"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
@@ -41,8 +42,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_button1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@+id/ll_button"
         android:orientation="horizontal">
 
         <Button
@@ -65,12 +68,20 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="sign in" />
+
+        <Button
+            android:id="@+id/btn_custom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="custom" />
     </LinearLayout>
 
     <com.fingdo.statelayout.StateLayout xmlns:sl="http://schemas.android.com/apk/res-auto"
         android:id="@+id/state_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/ll_button1"
         sl:emptyImg="@drawable/ic_state_empty"
         sl:emptyText="@string/empty_tip"
         sl:errorImg="@drawable/ic_state_error"
@@ -98,4 +109,19 @@
 
     </com.fingdo.statelayout.StateLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_custom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/state_layout"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/custom_tip" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

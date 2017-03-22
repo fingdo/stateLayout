@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.fingdo.statelayout.StateLayout;
@@ -23,6 +24,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
 
 
     private StateLayout stateLayout;
+    private RelativeLayout rlCustom;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sample);
 
         stateLayout = (StateLayout) findViewById(R.id.state_layout);
+        rlCustom = (RelativeLayout) findViewById(R.id.rl_custom);
 
 
         //提前设置
@@ -65,9 +68,6 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
 //        stateLayout.showCustomView();
 
 
-
-
-
         stateLayout.setUseAnimation(true);
 //        stateLayout.setViewSwitchAnimProvider(new FadeScaleViewAnimProvider());
         stateLayout.setRefreshListener(new StateLayout.OnViewRefreshListener() {
@@ -89,6 +89,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btn_time_out).setOnClickListener(this);
         findViewById(R.id.btn_not_network).setOnClickListener(this);
         findViewById(R.id.btn_login).setOnClickListener(this);
+        findViewById(R.id.btn_custom).setOnClickListener(this);
     }
 
     @Override
@@ -123,6 +124,9 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_login:
                 stateLayout.showLoginView();
+                break;
+            case R.id.btn_custom:
+                stateLayout.showCustomView(rlCustom);
                 break;
         }
     }

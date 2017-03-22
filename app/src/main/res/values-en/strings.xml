@@ -4,6 +4,7 @@
 
 
     <string name="content_tip">I am content</string>
+    <string name="custom_tip">I am custom view</string>
     <string name="toast_refresh">refresh</string>
     <string name="toast_sign_in">sign in</string>
 </resources>
