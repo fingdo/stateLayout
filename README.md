@@ -8,6 +8,7 @@
 ## Dependently
 - one step
 add to your project `build.gradle`
+
 ``` base
 allprojects {
 	repositories {
@@ -15,10 +16,11 @@ allprojects {
 		maven { url 'https://jitpack.io' }
 	}
 }
-``` base
+
+``` 
 - second step
 
-```
+``` base
 compile 'com.github.fingdo:stateLayout:1.0.0'
 ```
 
@@ -89,7 +91,7 @@ Usage is consistent with `ScrollView`, allowing only one root layout
 
 ### Code set icon and text (show before)
 ``` java
-//type为StateLayout的固定Type变量
+//StateLayout Constants Type
 public static final int ERROR = 1;
 public static final int EMPTY = 2;
 public static final int TIMEOUT = 3;
