@@ -1,94 +1,94 @@
-# StateLayout用法
+# StateLayout usage
 
-## 演示
+## Demo
 
 ![演示图](http://upload-images.jianshu.io/upload_images/1967808-08bf36a152a8ded2.gif)
 
 
-##依赖
-第一步，在项目根目录的build.gradle加入，如果没有，请加入
-
-```
+## Dependently
+- one step
+add to your project `build.gradle`
+``` base
 allprojects {
 	repositories {
 		...
 		maven { url 'https://jitpack.io' }
 	}
 }
-```
-第二步，依赖此库
+``` base
+- second step
 
 ```
 compile 'com.github.fingdo:stateLayout:1.0.0'
 ```
 
+[中文文档点这里](README-zh.md)
 
-## 使用方法
-### 引入布局
+### add in your xml
 
-用法与SrcollView一致，只允许一个`根布局`
+Usage is consistent with `ScrollView`, allowing only one root layout
 
-```
-<com.fngdo.statelayout.StateLayout
+``` xml
+<com.fingdo.statelayout.StateLayout
         android:id="@+id/state_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!-- 内容布局 one root view -->
-</com.fngdo.statelayout.StateLayout>
+</com.fingdo.statelayout.StateLayout>
 ```
 
-### 布局设置图标和文字
-```
+### Styleable parameter
+``` xml
 <declare-styleable name="StateLayout">
-    <!-- 错误提示图标 -->
+    <!-- error tip image -->
     <attr name="errorImg" format="reference" />
-    <!-- 错误提示文字 -->
+    <!-- error tip text -->
     <attr name="errorText" format="string" />
-    <!-- 空数据提示图标 -->
+    <!-- empty tip image -->
     <attr name="emptyImg" format="reference" />
-    <!-- 空数据提示文字 -->
+    <!-- empty tip text -->
     <attr name="emptyText" format="string" />
-    <!-- 没有网络提示图标 -->
+    <!-- no network tip image -->
     <attr name="noNetworkImg" format="reference" />
-    <!-- 没有网络提示文字 -->
+    <!-- no network tip text -->
     <attr name="noNetworkText" format="string" />
-    <!-- 超时提示图标 -->
+    <!-- timeout tip image -->
     <attr name="timeOutImg" format="reference" />
-    <!-- 超时提示文字 -->
+    <!-- timeout tip text -->
     <attr name="timeOutText" format="string" />
-    <!-- 登录提示图标 -->
+    <!-- sign in tip image -->
     <attr name="loginImg" format="reference" />
-    <!-- 登录提示文字 -->
+    <!-- sign in tip text -->
     <attr name="loginText" format="string" />
-    <!-- 加载提示文字 -->
+    <!-- loading tip text -->
     <attr name="loadingText" format="string" />
 </declare-styleable>
 ```
 
-#### 示例：
+#### sample：
 
-```
-<com.fngdo.statelayout.StateLayout
+``` xml
+<com.fingdo.statelayout.StateLayout
     xmlns:sl="http://schemas.android.com/apk/res-auto"
     android:id="@+id/state_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     sl:emptyImg="@drawable/ic_state_empty"
-    sl:emptyText="空数据提示文字"
+    sl:emptyText="Empty"
     sl:errorImg="@drawable/ic_state_error"
-    sl:errorText="错误提示文字"
-    sl:loadingText="加载提示文字"
+    sl:errorText="Error"
+    sl:loadingText="Loading..."
     sl:loginImg="@drawable/ic_state_login"
-    sl:loginText="登录提示文字"
+    sl:loginText="Sign in"
     sl:noNetworkImg="@drawable/ic_state_no_network"
-    sl:noNetworkText="没有网络提示文字"
+    sl:noNetworkText="No Network"
     sl:timeOutImg="@drawable/ic_state_time_out"
-    sl:timeOutText="超时提示文字">
-</com.fngdo.statelayout.StateLayout>
+    sl:timeOutText="Timeout">
+</com.fingdo.statelayout.StateLayout>
 ```
 
-### 代码提前设置图标和文字
-```
+### Code set icon and text (show before)
+``` java
 //type为StateLayout的固定Type变量
 public static final int ERROR = 1;
 public static final int EMPTY = 2;
@@ -99,77 +99,76 @@ public static final int LOGIN = 6;
 ```
 ![image](http://upload-images.jianshu.io/upload_images/1967808-4e6be6b3e218fece.png)
 
-### 代码设置显示布局
-```
-//展示没有网络的界面
+### Code show layout view
+``` java
+//show no network view
 stateLayout.showNoNetworkView();
-//展示超时的界面
+//show timeout view
 stateLayout.showTimeoutView();
-//展示空数据的界面
+//show empty view
 stateLayout.showEmptyView();
-//展示错误的界面
+//show error view
 stateLayout.showErrorView();
-//展示登录的界面
+//show sign in view
 stateLayout.showLoginView();
 
-//如下图所示
-1，直接显示
-2，设置提示stringId和图片Id显示
-3，设置提示stringId显示
-4，设置提示字符串现实
-5，设置提示字符串和图片Id显示
+// such as the below pic
+1，show
+2，show when set string Id and image Id
+3，show when set string Id
+4，show when set string
+5，show when set string and image Id
 ```
 ![image](http://upload-images.jianshu.io/upload_images/1967808-eb1e0af3ea1d7913.png)
-```
-//显示加载界面
+``` java
+//show loading view
 stateLayout.showLoadingView();
 
-1，直接显示
-2，设置提示stringId显示
-3，设置提示字符串现实
-4，设置自定义加载View现实，如：
-    1)进度条
-    2)显示gif的View
-    3)自定义布局View
-    
+1，show
+2，show when set string Id
+3，show when set string
+4，show when set custom view, example:
+    1)progress bar
+    2)gif imageView
+    3)custom view
 ```
 ![image](http://upload-images.jianshu.io/upload_images/1967808-878baa6fd9576469.png)
-```
-//显示自定义界面
+``` java
+// show your custom view(not state view)
 stateLayout.showCustomView();
 ```
-设置替换成自定义的界面:
+show when set your custom view:
 ![image](http://upload-images.jianshu.io/upload_images/1967808-f26b6a9925917e9d.png)
 
 
-### 设置切换界面动画
-动画默认为`false`，如果需要开启动画，请调用
+### Set switch animation
+animation default is `false`，if you want to use animation
 
-```
-//开启动画
+``` java
+// use animation
 stateLayout.setUseAnimation(true);
 ```
-如果用户不设置自定义动画，一般为默认的`渐隐缩放`动画
-如果用户需要设置动画，请调用
+if you don't set custom animation，default is `FadeScaleViewAnimProvider` animation
+if you want to set your custom animation
 
-```
-//设置动画
+``` java
+//set anmtion
 stateLayout.setViewSwitchAnimProvider(new FadeScaleViewAnimProvider());
 ```
-`stateLayout`自定义了两种动画
+`stateLayout` have 2 animation now
 
-```
-//渐隐缩放，渐显放大动画
+``` java
+// fade and scale animation
 FadeScaleViewAnimProvider
-//渐隐渐显动画
+// fade animation
 FadeViewAnimProvider
 ```
-用户如需自定义动画样式，请实现`ViewAnimProvider`接口
+if you want set custom your animation,please implements `ViewAnimProvider`
 
-重写`showAnimation`和`hideAnimation`方法。
+rewrite `showAnimation` and `hideAnimation` method。
 
-```
-//以FadeViewAnimProvider为例
+``` java
+//FadeViewAnimProvider.class
 public class FadeViewAnimProvider implements ViewAnimProvider {
 
     @Override
@@ -192,18 +191,18 @@ public class FadeViewAnimProvider implements ViewAnimProvider {
 ```
 
 
-### 监听刷新和登录点击
-请实现`StateLayout`里面的`OnViewRefreshListener`接口。
+### Listen refresh and login click callback
+please implements `StateLayout.OnViewRefreshListener`。
 
-重写两个方法：
+rewrite method：
 
-```
-//刷新界面
+``` java
+//refresh layout
 void refreshClick();
     
-//登录点击
+//login click
 void loginClick();
 ```
 
 
-感谢[lufficc](https://github.com/lufficc/StateLayout)提供的思路
+Thanks [lufficc](https://github.com/lufficc/StateLayout) open source animation
