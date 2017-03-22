@@ -21,7 +21,7 @@ allprojects {
 - second step
 
 ``` base
-compile 'com.github.fingdo:stateLayout:1.0.0'
+compile 'com.github.fingdo:stateLayout:1.0.1'
 ```
 
 [中文文档点这里](README-zh.md)
