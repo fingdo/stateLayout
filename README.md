@@ -2,7 +2,7 @@
 
 ## Demo
 
-![演示图](http://upload-images.jianshu.io/upload_images/1967808-08bf36a152a8ded2.gif)
+![sample](gif/stateLayout.gif)
 
 
 ## Dependently
