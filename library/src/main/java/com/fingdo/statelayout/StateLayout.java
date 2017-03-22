@@ -478,6 +478,7 @@ public class StateLayout extends FrameLayout {
      * @param view 自定义View
      */
     public void showCustomView(View view) {
+        view.setLayoutParams(this.getLayoutParams());
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, view);
         currentShowingView = view;
     }
