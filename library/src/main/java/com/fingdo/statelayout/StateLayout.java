@@ -2,6 +2,7 @@ package com.fingdo.statelayout;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -492,6 +493,9 @@ public class StateLayout extends FrameLayout {
      * @param text 文字
      */
     public void setTipText(int type, String text) {
+        if (text == null) { //text is null
+            return;
+        }
         switch (type) {
             case ERROR:
                 ((ErrorViewHolder) errorView.getTag()).tvTip.setText(text);

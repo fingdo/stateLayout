@@ -7,7 +7,7 @@
 
 ## Dependently
 - one step
-add to your project `build.gradle`
+  add to your project `build.gradle`
 
 ``` base
 allprojects {
@@ -17,7 +17,7 @@ allprojects {
 	}
 }
 
-``` 
+```
 - second step
 
 ``` base
@@ -90,6 +90,7 @@ Usage is consistent with `ScrollView`, allowing only one root layout
 ```
 
 ### Code set icon and text (show before)
+#### if you set `null`,will use last time tip text.set "" can show,only show tip image.
 ``` java
 //StateLayout Constants Type
 public static final int ERROR = 1;

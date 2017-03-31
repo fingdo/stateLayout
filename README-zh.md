@@ -86,6 +86,7 @@ compile 'com.github.fingdo:stateLayout:1.0.1'
 ```
 
 ### 代码提前设置图标和文字
+#### 如果你设置了一个`null`数据的时候，将使用上一次设置的提示语。空字符串可以正常显示为空，即只显示一个提示图片。
 ``` java
 //type为StateLayout的固定Type变量
 public static final int ERROR = 1;
