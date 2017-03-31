@@ -9,19 +9,17 @@
 - one step
   add to your project `build.gradle`
 
-``` base
+``` basic
 allprojects {
 	repositories {
-		...
 		maven { url 'https://jitpack.io' }
 	}
 }
-
 ```
 - second step
 
-``` base
-compile 'com.github.fingdo:stateLayout:1.0.1'
+``` basic
+compile 'com.github.fingdo:stateLayout:1.0.2'
 ```
 
 [中文文档点这里](README-zh.md)

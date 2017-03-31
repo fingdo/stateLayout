@@ -8,18 +8,17 @@
 ##依赖
 第一步，在项目根目录的build.gradle加入，如果没有，请加入
 
-``` base
+``` Basic
 allprojects {
 	repositories {
-		...
 		maven { url 'https://jitpack.io' }
 	}
 }
 ```
 第二步，依赖此库
 
-``` base
-compile 'com.github.fingdo:stateLayout:1.0.1'
+``` basic
+compile 'com.github.fingdo:stateLayout:1.0.2'
 ```
 
 ### 引入布局
