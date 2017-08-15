@@ -119,29 +119,16 @@ public class StateLayout extends FrameLayout {
         LayoutInflater inflater = LayoutInflater.from(context);
 
         errorView = LayoutHelper.getErrorView(inflater, errorItem, this);
-        addView(errorView);
-        errorView.setVisibility(GONE);
 
         emptyView = LayoutHelper.getEmptyView(inflater, emptyItem);
-        addView(emptyView);
-        emptyView.setVisibility(GONE);
 
         notNetworkView = LayoutHelper.getNoNetworkView(inflater, noNetworkItem, this);
-        addView(notNetworkView);
-        notNetworkView.setVisibility(GONE);
 
         timeOutView = LayoutHelper.getTimeOutView(inflater, timeOutItem, this);
-        addView(timeOutView);
-        timeOutView.setVisibility(GONE);
 
         loadingView = LayoutHelper.getLoadingView(inflater, loadingItem);
-        addView(loadingView);
-        loadingView.setVisibility(GONE);
 
         loginView = LayoutHelper.getLoginView(inflater, loginItem, this);
-        addView(loginView);
-        loginView.setVisibility(GONE);
-
     }
 
     private void checkIsContentView(View view) {
@@ -159,6 +146,9 @@ public class StateLayout extends FrameLayout {
      * 展示错误的界面
      */
     public void showErrorView() {
+        if (errorView.getParent() == null) {
+            addView(errorView);
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, errorView);
         currentShowingView = errorView;
     }
@@ -169,6 +159,9 @@ public class StateLayout extends FrameLayout {
      * @param msgId 提示语
      */
     public void showErrorView(int msgId) {
+        if (errorView.getParent() == null) {
+            addView(errorView);
+        }
         setTipText(ERROR, msgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, errorView);
         currentShowingView = errorView;
@@ -180,6 +173,9 @@ public class StateLayout extends FrameLayout {
      * @param msg 提示语
      */
     public void showErrorView(String msg) {
+        if (errorView.getParent() == null) {
+            addView(errorView);
+        }
         setTipText(ERROR, msg);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, errorView);
         currentShowingView = errorView;
@@ -192,6 +188,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showErrorView(int msgId, int imgId) {
+        if (errorView.getParent() == null) {
+            addView(errorView);
+        }
         setTipText(ERROR, msgId);
         setTipImg(ERROR, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, errorView);
@@ -205,6 +204,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showErrorView(String msg, int imgId) {
+        if (errorView.getParent() == null) {
+            addView(errorView);
+        }
         setTipText(ERROR, msg);
         setTipImg(ERROR, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, errorView);
@@ -215,6 +217,9 @@ public class StateLayout extends FrameLayout {
      * 展示空数据的界面
      */
     public void showEmptyView() {
+        if (emptyView.getParent() == null) {
+            addView(emptyView);
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, emptyView);
         currentShowingView = emptyView;
     }
@@ -225,6 +230,9 @@ public class StateLayout extends FrameLayout {
      * @param msgId 提示语
      */
     public void showEmptyView(int msgId) {
+        if (emptyView.getParent() == null) {
+            addView(emptyView);
+        }
         setTipText(EMPTY, msgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, emptyView);
         currentShowingView = emptyView;
@@ -236,6 +244,9 @@ public class StateLayout extends FrameLayout {
      * @param msg 提示语
      */
     public void showEmptyView(String msg) {
+        if (emptyView.getParent() == null) {
+            addView(emptyView);
+        }
         setTipText(EMPTY, msg);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, emptyView);
         currentShowingView = emptyView;
@@ -248,6 +259,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showEmptyView(int msgId, int imgId) {
+        if (emptyView.getParent() == null) {
+            addView(emptyView);
+        }
         setTipText(EMPTY, msgId);
         setTipImg(EMPTY, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, emptyView);
@@ -261,6 +275,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showEmptyView(String msg, int imgId) {
+        if (emptyView.getParent() == null) {
+            addView(emptyView);
+        }
         setTipText(EMPTY, msg);
         setTipImg(EMPTY, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, emptyView);
@@ -271,6 +288,9 @@ public class StateLayout extends FrameLayout {
      * 展示超时的界面
      */
     public void showTimeoutView() {
+        if (timeOutView.getParent() == null) {
+            addView(timeOutView);
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, timeOutView);
         currentShowingView = timeOutView;
     }
@@ -281,6 +301,9 @@ public class StateLayout extends FrameLayout {
      * @param msgId 提示语
      */
     public void showTimeoutView(int msgId) {
+        if (timeOutView.getParent() == null) {
+            addView(timeOutView);
+        }
         setTipText(TIMEOUT, msgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, timeOutView);
         currentShowingView = timeOutView;
@@ -292,6 +315,9 @@ public class StateLayout extends FrameLayout {
      * @param msg 提示语
      */
     public void showTimeoutView(String msg) {
+        if (timeOutView.getParent() == null) {
+            addView(timeOutView);
+        }
         setTipText(TIMEOUT, msg);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, timeOutView);
         currentShowingView = timeOutView;
@@ -304,6 +330,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showTimeoutView(int msgId, int imgId) {
+        if (timeOutView.getParent() == null) {
+            addView(timeOutView);
+        }
         setTipText(TIMEOUT, msgId);
         setTipImg(TIMEOUT, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, timeOutView);
@@ -317,6 +346,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showTimeoutView(String msg, int imgId) {
+        if (timeOutView.getParent() == null) {
+            addView(timeOutView);
+        }
         setTipText(TIMEOUT, msg);
         setTipImg(TIMEOUT, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, timeOutView);
@@ -327,6 +359,9 @@ public class StateLayout extends FrameLayout {
      * 展示没有网络的界面
      */
     public void showNoNetworkView() {
+        if (notNetworkView.getParent() == null) {
+            addView(notNetworkView);
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, notNetworkView);
         currentShowingView = notNetworkView;
     }
@@ -337,6 +372,9 @@ public class StateLayout extends FrameLayout {
      * @param msgId 提示语
      */
     public void showNoNetworkView(int msgId) {
+        if (notNetworkView.getParent() == null) {
+            addView(notNetworkView);
+        }
         setTipText(NOT_NETWORK, msgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, notNetworkView);
         currentShowingView = notNetworkView;
@@ -348,6 +386,9 @@ public class StateLayout extends FrameLayout {
      * @param msg 提示语
      */
     public void showNoNetworkView(String msg) {
+        if (notNetworkView.getParent() == null) {
+            addView(notNetworkView);
+        }
         setTipText(NOT_NETWORK, msg);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, notNetworkView);
         currentShowingView = notNetworkView;
@@ -360,6 +401,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showNoNetworkView(int msgId, int imgId) {
+        if (notNetworkView.getParent() == null) {
+            addView(notNetworkView);
+        }
         setTipText(NOT_NETWORK, msgId);
         setTipImg(NOT_NETWORK, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, notNetworkView);
@@ -370,6 +414,9 @@ public class StateLayout extends FrameLayout {
      * 展示登录的界面
      */
     public void showLoginView() {
+        if (loginView.getParent() == null) {
+            addView(loginView);
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loginView);
         currentShowingView = loginView;
     }
@@ -380,6 +427,9 @@ public class StateLayout extends FrameLayout {
      * @param msgId 提示语
      */
     public void showLoginView(int msgId) {
+        if (loginView.getParent() == null) {
+            addView(loginView);
+        }
         setTipText(LOGIN, msgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loginView);
         currentShowingView = loginView;
@@ -391,6 +441,9 @@ public class StateLayout extends FrameLayout {
      * @param msg 提示语
      */
     public void showLoginView(String msg) {
+        if (loginView.getParent() == null) {
+            addView(loginView);
+        }
         setTipText(LOGIN, msg);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loginView);
         currentShowingView = loginView;
@@ -403,6 +456,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showLoginView(int msgId, int imgId) {
+        if (loginView.getParent() == null) {
+            addView(loginView);
+        }
         setTipText(LOGIN, msgId);
         setTipImg(LOGIN, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loginView);
@@ -416,6 +472,9 @@ public class StateLayout extends FrameLayout {
      * @param imgId 图片Id
      */
     public void showLoginView(String msg, int imgId) {
+        if (loginView.getParent() == null) {
+            addView(loginView);
+        }
         setTipText(LOGIN, msg);
         setTipImg(LOGIN, imgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loginView);
@@ -427,6 +486,9 @@ public class StateLayout extends FrameLayout {
      * 展示加载中的界面
      */
     public void showLoadingView() {
+        if (loadingView.getParent() == null) {
+            addView(loadingView);
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
         currentShowingView = loadingView;
     }
@@ -437,6 +499,9 @@ public class StateLayout extends FrameLayout {
      * @param view 进度条部分
      */
     public void showLoadingView(View view) {
+        if (loadingView.getParent() == null) {
+            addView(loadingView);
+        }
         setLoadingView(view);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
         currentShowingView = loadingView;
@@ -449,6 +514,9 @@ public class StateLayout extends FrameLayout {
      * @param msgId 提示语
      */
     public void showLoadingView(int msgId) {
+        if (loadingView.getParent() == null) {
+            addView(loadingView);
+        }
         setTipText(LOADING, msgId);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
         currentShowingView = loadingView;
@@ -460,6 +528,9 @@ public class StateLayout extends FrameLayout {
      * @param msg 提示语
      */
     public void showLoadingView(String msg) {
+        if (loadingView.getParent() == null) {
+            addView(loadingView);
+        }
         setTipText(LOADING, msg);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
         currentShowingView = loadingView;
@@ -479,7 +550,11 @@ public class StateLayout extends FrameLayout {
      * @param view 自定义View
      */
     public void showCustomView(View view) {
-        view.setLayoutParams(this.getLayoutParams());
+        if (view.getParent() == null) { //当前的view没有父类
+            addView(view);
+        } else {
+            view.setLayoutParams(this.getLayoutParams());
+        }
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, view);
         currentShowingView = view;
     }
