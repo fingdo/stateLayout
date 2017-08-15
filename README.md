@@ -19,7 +19,7 @@ allprojects {
 - second step
 
 ``` basic
-compile 'com.github.fingdo:stateLayout:1.0.2'
+compile 'com.github.fingdo:stateLayout:1.0.3'
 ```
 
 [中文文档点这里](README-zh.md)

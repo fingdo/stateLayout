@@ -18,7 +18,7 @@ allprojects {
 第二步，依赖此库
 
 ``` basic
-compile 'com.github.fingdo:stateLayout:1.0.2'
+compile 'com.github.fingdo:stateLayout:1.0.3'
 ```
 
 ### 引入布局
