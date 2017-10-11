@@ -489,6 +489,7 @@ public class StateLayout extends FrameLayout {
         if (loadingView.getParent() == null) {
             addView(loadingView);
         }
+        setLoadingView(null, true);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
         currentShowingView = loadingView;
     }
@@ -502,7 +503,22 @@ public class StateLayout extends FrameLayout {
         if (loadingView.getParent() == null) {
             addView(loadingView);
         }
-        setLoadingView(view);
+        setLoadingView(view, true);
+        AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
+        currentShowingView = loadingView;
+    }
+
+    /**
+     * 展示加载中的界面
+     *
+     * @param view    进度条部分
+     * @param showTip 是否显示提示
+     */
+    public void showLoadingView(View view, boolean showTip) {
+        if (loadingView.getParent() == null) {
+            addView(loadingView);
+        }
+        setLoadingView(view, showTip);
         AnimationHelper.switchViewByAnim(useAnimation, viewAnimProvider, currentShowingView, loadingView);
         currentShowingView = loadingView;
     }
@@ -679,9 +695,17 @@ public class StateLayout extends FrameLayout {
      *
      * @param view 显示的View
      */
-    public void setLoadingView(View view) {
-        ((LoadingViewHolder) loadingView.getTag()).frameLayout.removeAllViews();
-        ((LoadingViewHolder) loadingView.getTag()).frameLayout.addView(view);
+    public void setLoadingView(View view, boolean showTip) {
+        LoadingViewHolder holder = (LoadingViewHolder) loadingView.getTag();
+        if (view != null) {
+            holder.frameLayout.removeAllViews();
+            holder.frameLayout.addView(view);
+        }
+        if (showTip) {
+            holder.tvTip.setVisibility(VISIBLE);
+        } else {
+            holder.tvTip.setVisibility(GONE);
+        }
     }
 
     //************ animation ************//

@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -87,6 +89,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btn_empty).setOnClickListener(this);
         findViewById(R.id.btn_error).setOnClickListener(this);
         findViewById(R.id.btn_loading).setOnClickListener(this);
+        findViewById(R.id.btn_loading_no_tip).setOnClickListener(this);
         findViewById(R.id.btn_time_out).setOnClickListener(this);
         findViewById(R.id.btn_not_network).setOnClickListener(this);
         findViewById(R.id.btn_login).setOnClickListener(this);
@@ -112,6 +115,15 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_loading:
                 stateLayout.showLoadingView();
+//                stateLayout.setTipText(StateLayout.TIMEOUT, "12345");
+//                stateLayout.setTipImg(StateLayout.TIMEOUT, R.mipmap.ic_launcher);
+                break;
+            case R.id.btn_loading_no_tip:
+                ImageView imageView = new ImageView(this);
+                imageView.setBackgroundResource(R.color.colorPrimary);
+                ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(300, 300);
+                imageView.setLayoutParams(layoutParams);
+                stateLayout.showLoadingView(imageView, false);
 //                stateLayout.setTipText(StateLayout.TIMEOUT, "12345");
 //                stateLayout.setTipImg(StateLayout.TIMEOUT, R.mipmap.ic_launcher);
                 break;
